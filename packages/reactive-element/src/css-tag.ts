@@ -24,12 +24,12 @@ export const supportsAdoptingStyleSheets =
  */
 export type CSSResultOrNative = CSSResult | CSSStyleSheet;
 
+export type CSSResultArray = Array<CSSResultOrNative | CSSResultArray>;
+
 /**
  * A single CSSResult, CSSStyleSheet, or an array or nested arrays of those.
  */
-export type CSSResultGroup =
-  | CSSResultOrNative
-  | Array<CSSResultOrNative | CSSResultGroup>;
+export type CSSResultGroup = CSSResultOrNative | CSSResultArray;
 
 const constructionToken = Symbol();
 
